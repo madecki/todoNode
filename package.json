@@ -1,0 +1,27 @@
+{
+  "name": "todonode",
+  "version": "1.0.0",
+  "description": "Todo basic backend for an app",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongodb": "^3.1.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madecki/todoNode.git"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "Madecki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madecki/todoNode/issues"
+  },
+  "homepage": "https://github.com/madecki/todoNode#readme"
+}
