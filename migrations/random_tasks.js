@@ -32,6 +32,11 @@ const tasks = [
     new Task(),
 ]
 
-exports.getTasks = () => {
+const getTasks = () => {
     return tasks;
+}
+
+module.exports = {
+    Task,
+    getTasks
 }
