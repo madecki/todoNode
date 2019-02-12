@@ -2,6 +2,7 @@ const MongoClient = require('mongodb').MongoClient
 const url = 'mongodb://localhost:27017';
 const dbName = 'todo';
 const collectionName = 'tasks';
+const ObjectID = require('mongodb').ObjectID; 
 
 const client = new MongoClient(url, { useNewUrlParser: true });
 
@@ -33,7 +34,29 @@ const addTask = (task) => new Promise((resolve, reject) => {
     })
 })
 
+const editTask = (task) => new Promise((resolve, reject) => {
+    client.connect((err, client) => {
+        if (err) throw err;
+
+        const db = client.db(dbName);
+
+        db.collection(collectionName).updateOne({ "id": task.id },
+            { $set: {
+                name: task.name,
+                desc: task.desc,
+                prior: task.prior,
+                status: task.status,
+            }},
+            (err, res) => {
+                if (err) throw err;
+
+                resolve(res);
+            })
+        })
+})
+
 module.exports = {
     getTasksFromDB,
-    addTask
+    addTask,
+    editTask
 }
