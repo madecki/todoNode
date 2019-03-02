@@ -11,7 +11,9 @@
     "mongoose": "^5.4.8",
     "nodemon": "^1.18.9"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nocache": "^2.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

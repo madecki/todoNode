@@ -3,8 +3,8 @@ const tasks = require('./migrations/random_tasks');
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
-const url = 'mongodb://localhost:27017';
-const dbName = 'todo';
+const url = 'mongodb://arkadiuszPasciak:1qa2ws3ed@ds155845.mlab.com:55845/todopasciak';
+const dbName = 'todopasciak';
 
 const client = new MongoClient(url);
 
