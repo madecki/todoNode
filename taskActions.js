@@ -22,7 +22,7 @@ router.get('/getTasks', cors(corsOptions), (req, res) => {
     })
 })
 
-router.post('/addTask', (req, res) => {
+router.post('/addTask', cors(corsOptions), (req, res) => {
     const taskData = req.body;
     const task = new Task(taskData.name, taskData.desc, taskData.prior, taskData.status);
 
@@ -31,7 +31,7 @@ router.post('/addTask', (req, res) => {
     })
 })
 
-router.put('/editTask', (req, res) => {
+router.put('/editTask', cors(corsOptions), (req, res) => {
     const taskData = req.body;
     const task = new Task(taskData._id, taskData.name, taskData.desc, taskData.prior, taskData.status);
 
