@@ -20,9 +20,9 @@ router.post('/addTask', (req, res) => {
 
 router.put('/editTask', (req, res) => {
     const taskData = req.body;
-    const task = new Task(taskData._id, taskData.name, taskData.desc, taskData.prior, taskData.status);
+    const task = new Task(taskData.name, taskData.desc, taskData.prior, taskData.status);
 
-    dbActions.editTask(task).then((resp) => {
+    dbActions.editTask(task, taskData._id).then((resp) => {
         res.send(resp)
     })
 })

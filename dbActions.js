@@ -35,13 +35,13 @@ const addTask = (task) => new Promise((resolve, reject) => {
     })
 })
 
-const editTask = (task) => new Promise((resolve, reject) => {
+const editTask = (task, id) => new Promise((resolve, reject) => {
     client.connect((err, client) => {
         if (err) throw err;
 
         const db = client.db(dbName);
 
-        db.collection(collectionName).updateOne({ "_id": ObjectID(task.id) },
+        db.collection(collectionName).updateOne({ "_id": ObjectID(id) },
             { $set: {
                 name: task.name,
                 desc: task.desc,
